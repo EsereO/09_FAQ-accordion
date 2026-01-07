@@ -1,0 +1,122 @@
+/* roots */
+:root {
+--color-background-top: #2f1533;
+--color-background-bottom: #f9f0ff;
+--color-surface: #ffffff;
+
+--expandedtext-color :  #8c6991;
+
+--font-family: "Work Sans", sans-serif;;
+}
+/* reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base */
+body {
+    font-size: 16px;
+    background-color: var(--color-background-bottom);
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: var(--font-family);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;   
+}
+
+/* layout */
+.container {
+    background-color: var(--color-surface);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+  
+}
+
+.accordion-header {
+    display: flex;
+    gap: 2rem;  
+}
+
+.accordion-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 1rem 0;
+
+} 
+
+.accordion-btn:hover {
+    color: #800080;
+} 
+
+/* components */
+
+img, svg {
+    max-width: 100%;
+    display: block;
+}
+
+.accordion-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.accordion-icons {
+    min-width: 10%;
+}
+
+.accordion-icons .minus-icon {
+    display: none;
+}
+
+.accordion-answer {
+    background-color: var(--color-surface);
+    max-height: 0;
+    overflow: hidden;
+}
+
+.accordion-answer p {
+    color: var(--expandedtext-color);
+    padding: 1rem 0;
+}
+
+.accordion-item:not(:last-child){
+    border-bottom: 1px solid #eee;
+  }
+  
+/* Active states */
+.accordion-btn[aria-expanded="true"] + .accordion-answer {
+    max-height: 400px;
+}
+
+.accordion-btn[aria-expanded="true"] .plus-icon {
+    display: none;
+}
+
+.accordion-btn[aria-expanded="true"] .minus-icon {
+    display: block;
+}
+
+/* media queries */
+@media (min-width: 580px) {
+    body {
+        background-image: url(assets/images/background-pattern-desktop.svg);
+    }
+    .container {
+        max-width: 800px;
+    }
+}
+/* ## Colors
